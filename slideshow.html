@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+	var index=0;
+	function change()
+	{
+		var temp=index%2;
+		if(temp==0)
+		{
+			document.write("if index is even")
+			document.write("<img src="+"'2.jpg'"+"alt="+"'image_2'"+"style="+"'width:600px;height:350px'"+">")
+			index=index+1;
+			document.write("<input type="+"'button'"+"onclick="+"'change();'"+"value="+"'change'")
+		}
+		else
+		{
+			document.write("if index is odd")
+			document.write("<img src="+"'1.jpg'"+"alt="+"'image_1'"+"style="+"'width:600px;height:350px'"+">")
+			index=index+1;
+			document.write("<input type="+"'button'"+"onclick="+"'change();'"+"value="+"'change'")
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><img src="1.jpg" alt="Image_1" style="width:600px; height:350px;"></td>
+		</tr>
+		<tr>
+			<td><input type="button" onclick="change();" value="change"></td>
+		</tr>
+	</table>
+</body>
+</httml>
