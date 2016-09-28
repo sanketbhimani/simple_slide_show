@@ -1,23 +1,22 @@
 <html>
 <head>
 <script type="text/javascript">
-	var index=0;
+	var index=1;
 	function change()
 	{
-		var temp=index%2;
-		if(temp==0)
+		if(index==1)
 		{
-			document.write("if index is even")
-			document.write("<img src="+"'2.jpg'"+"alt="+"'image_2'"+"style="+"'width:600px;height:350px'"+">")
-			index=index+1;
-			document.write("<input type="+"'button'"+"onclick="+"'change();'"+"value="+"'change'")
+			index++
+			document.getElementById("1").src="2."+"jpg"
+			document.getElementById("1").id="2"
+			document.getElementById("1").alt="Image_2"
 		}
 		else
 		{
-			document.write("if index is odd")
-			document.write("<img src="+"'1.jpg'"+"alt="+"'image_1'"+"style="+"'width:600px;height:350px'"+">")
-			index=index+1;
-			document.write("<input type="+"'button'"+"onclick="+"'change();'"+"value="+"'change'")
+			index--
+			document.getElementById("2").src="1."+"jpg"
+			document.getElementById("2").id="1"
+			document.getElementById("2").alt="Image_1"
 		}
 		
 	}
@@ -26,11 +25,11 @@
 <body>
 	<table>
 		<tr>
-			<td><img src="1.jpg" alt="Image_1" style="width:600px; height:350px;"></td>
+			<td><img src="1.jpg" alt="Image_1" id="1" style="width:600px; height:350px;"></td>
 		</tr>
 		<tr>
 			<td><input type="button" onclick="change();" value="change"></td>
 		</tr>
 	</table>
 </body>
-</httml>
+</html>
