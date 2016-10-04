@@ -1,35 +1,64 @@
 <html>
 <head>
+<title>ColdPlay</title>
 <script type="text/javascript">
 	var index=1;
 	function change()
 	{
 		if(index==1)
 		{
+			document.getElementById("bgimg").style.backgroundImage="url('2.jpg')"
 			index++
-			document.getElementById("1").src="2."+"jpg"
-			document.getElementById("1").id="2"
-			document.getElementById("1").alt="Image_2"
 		}
 		else
 		{
+			document.getElementById("bgimg").style.backgroundImage="url('1.jpg')"
 			index--
-			document.getElementById("2").src="1."+"jpg"
-			document.getElementById("2").id="1"
-			document.getElementById("2").alt="Image_1"
 		}
 		
 	}
+	
 </script>
+<style type="text/css">
+	.main {
+		position: relative;
+		float: left;
+		width: 600px;
+		height: 400px;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url("1.jpg");
+	}
+	.left_arrow
+	{
+		width: 50px;
+		height: 50px;
+		position: relative;
+		float: left;
+		top: 150px;
+	}
+	.right_arrow
+	{
+		width: 29px;
+		height: 50px;
+		position: relative;
+		float: right;
+		top: 150px;
+	}
+	
+</style>
 </head>
 <body>
-	<table>
-		<tr>
-			<td><img src="1.jpg" alt="Image_1" id="1" style="width:600px; height:350px;"></td>
-		</tr>
-		<tr>
-			<td><input type="button" onclick="change();" value="change"></td>
-		</tr>
-	</table>
+	<div class="main" id="bgimg">
+		<div class="left_arrow">
+			<input type="button" id="left" onclick="change();" value="&#8592;">
+			
+		</div>
+		<div class="right_arrow">
+			<input type="button" id="right" onclick="change();" value="&#8594;">
+			
+		</div>
+	</div>
 </body>
 </html>
