@@ -3,17 +3,28 @@
 <title>ColdPlay</title>
 <script type="text/javascript">
 	var index=1;
+	var caption;
 	function change()
 	{
 		if(index==1)
 		{
-			document.getElementById("bgimg").style.backgroundImage="url('2.jpg')"
-			index++
+			document.getElementById("bgimg").style.backgroundImage="url('2.jpg')";
+			index++;
 		}
 		else
 		{
-			document.getElementById("bgimg").style.backgroundImage="url('1.jpg')"
-			index--
+			document.getElementById("bgimg").style.backgroundImage="url('1.jpg')";
+			index--;
+		}
+		if(index==1)
+		{
+			document.getElementById("text1").style.visibility="visible";
+			document.getElementById("text2").style.visibility="hidden";
+		}
+		else
+		{
+			document.getElementById("text2").style.visibility="visible";
+			document.getElementById("text1").style.visibility="hidden";
 		}
 		
 	}
@@ -40,24 +51,49 @@
 	}
 	.right_arrow
 	{
-		width: 29px;
+		width: 23px;
 		height: 50px;
 		position: relative;
 		float: right;
 		top: 150px;
 	}
+	.caption1
+	{
+		width: 100px;
+		height: 20px;
+		position: relative;
+		top: 350px;
+		left: 250px;
+		visibility: visible;
+	}
+	.caption2
+	{
+		width: 100px;
+		height: 20px;
+		position: relative;
+		top: 350px;
+		left: 250px;
+		visibility: hidden;
+	}
+	
 	
 </style>
 </head>
 <body>
 	<div class="main" id="bgimg">
 		<div class="left_arrow">
-			<input type="button" id="left" onclick="change();" value="&#8592;">
+			<input type="button" id="left" onclick="change();" value="&#10094;">
 			
 		</div>
 		<div class="right_arrow">
-			<input type="button" id="right" onclick="change();" value="&#8594;">
+			<input type="button" id="right" onclick="change();" value="&#10095;">
 			
+		</div>
+		<div class="caption1" id="text1">
+			COLDPLAY_1
+		</div>
+		<div class="caption2" id="text2">
+			COLDPLAY_2
 		</div>
 	</div>
 </body>
