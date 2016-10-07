@@ -8,12 +8,16 @@
 	{
 		if(index==1)
 		{
+			document.getElementById("bgimg").style.display = "none";
 			document.getElementById("bgimg").style.backgroundImage="url('2.jpg')";
+			document.getElementById("bgimg").style.display = "block";
 			index++;
 		}
 		else
 		{
+			document.getElementById("bgimg").style.display = "none";
 			document.getElementById("bgimg").style.backgroundImage="url('1.jpg')";
+			document.getElementById("bgimg").style.display = "block";
 			index--;
 		}
 		if(index==1)
@@ -33,12 +37,12 @@
 <style type="text/css">
 	.main {
 		position: relative;
-		float: left;
 		width: 600px;
 		height: 400px;
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
 		background-size: cover;
+		z-index: -1;
 		background-image: url("1.jpg");
 	}
 	.left_arrow
@@ -57,30 +61,39 @@
 		float: right;
 		top: 150px;
 	}
-	.caption1
+	.caption1, .caption2
 	{
 		width: 100px;
 		height: 20px;
-		position: relative;
-		top: 350px;
-		left: 250px;
+		position: absolute;
+		z-index: 2;
 		visibility: visible;
+		color: white;
+		bottom: 15;
+		margin-left:42%;
 	}
-	.caption2
-	{
-		width: 100px;
-		height: 20px;
-		position: relative;
-		top: 350px;
-		left: 250px;
-		visibility: hidden;
+	.anim{
+		-webkit-animation-name: fade;
+  		-webkit-animation-duration: 1.5s;
+ 		animation-name: fade;
+  		animation-duration: 1.5s;
+	}
+	@-webkit-keyframes anim {
+	  from {opacity: .4}
+	  to {opacity: 1}
+	}
+
+	@keyframes anim {
+	  from {opacity: .4}
+	  to {opacity: 1}
 	}
 	
 	
 </style>
 </head>
 <body>
-	<div class="main" id="bgimg">
+<center>
+	<div class="main anim" id="bgimg">
 		<div class="left_arrow">
 			<input type="button" id="left" onclick="change();" value="&#10094;">
 			
@@ -96,5 +109,6 @@
 			COLDPLAY_2
 		</div>
 	</div>
+	</center>
 </body>
 </html>
